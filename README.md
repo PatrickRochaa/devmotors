@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+DevMotors - Oficina Especializada
+📌** Sobre o Projeto**
+O DevMotors é um site desenvolvido com Next.js, React e TypeScript para uma oficina automotiva especializada. O projeto apresenta um layout dinâmico que exibe os serviços da oficina e é integrado ao Cosmic.js, um CMS usado para gerenciar o conteúdo das páginas.
+Este projeto foi desenvolvido no Curso FullStack Pro do módulo NextJS do professor Matheus Fraga (Sujeito Programador).
+________________________________________
+🚀 **Tecnologias Utilizadas:**
+•	Next.js - Framework React para aplicações server-side e estáticas.
+•	React - Biblioteca para construção da interface.
+•	TypeScript - Tipagem estática para maior segurança no desenvolvimento.
+•	SCSS - Estilização modular.
+•	Lucide React - Biblioteca de ícones.
+•	Cosmic.js - CMS utilizado para gerenciar o conteúdo dinâmico do site.
+________________________________________
+⚙️ **Funcionalidades**
+•	SEO otimizado com metadados (title, description, OpenGraph, robots).
+•	Integração com Cosmic.js para carregar o conteúdo dinâmico das páginas.
+•	Página dinâmica que carrega os serviços da oficina baseados no slug.
+•	Componente Hero para destacar informações principais.
+•	Imagens otimizadas utilizando o Next.js Image.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
