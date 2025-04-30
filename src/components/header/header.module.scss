@@ -1,0 +1,85 @@
+/* Estilização do header principal */
+.header {
+  width: 100%; /* Ocupa toda a largura da tela */
+  z-index: 99; /* Define a sobreposição do header, garantindo que ele fique acima de outros elementos */
+  position: fixed; /* Fixa o header no topo da página */
+  background-color: #fff; /* Cor de fundo branca */
+}
+
+/* Estilização quando o header se fixa (ao rolar a página) */
+.fixed {
+  position: fixed; /* Continua fixado no topo */
+  background-color: rgba(
+    252,
+    252,
+    252,
+    0.74
+  ); /* Cor de fundo com transparência */
+  -webkit-box-shadow: 0px 6px 20px -12px rgba(0, 0, 0, 0.6); /* Sombra para navegadores Webkit */
+  -moz-box-shadow: 0px 6px 20px -12px rgba(0, 0, 0, 0.6); /* Sombra para navegadores Mozilla */
+  box-shadow: 0px 6px 20px -12px rgba(0, 0, 0, 0.6); /* Sombra geral */
+  backdrop-filter: blur(4px); /* Aplica um desfoque no fundo atrás do header */
+}
+
+/* Estilização para o estado inicial do header (sem estar fixo) */
+.background {
+  background-color: #fff; /* Cor de fundo branca */
+}
+
+/* Container que centraliza o conteúdo do header */
+.container {
+  max-width: 1024px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 14px; /* Padding lateral */
+}
+
+/* Estilização do conteúdo dentro do header */
+.content {
+  display: flex; /* Usa flexbox para distribuir os elementos */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  justify-content: space-between; /* Distribui os itens com espaço entre eles */
+  height: 64px; /* Define a altura do header */
+}
+
+/* Inicialmente, o logo é ocultado */
+.contentLogo {
+  display: none; /* Logo oculto em telas pequenas */
+}
+
+/* Estilização do link do logo */
+.contentLogo a {
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #121212; /* Cor do texto */
+  font-size: 30px; /* Tamanho da fonte */
+}
+
+/* Navegação do menu */
+.nav {
+  display: flex; /* Usa flexbox para organizar os links horizontalmente */
+  gap: 14px; /* Espaçamento entre os links */
+
+  /* Estilização dos links dentro do menu */
+  a {
+    font-weight: medium; /* Peso da fonte médio */
+    color: #121212; /* Cor do texto */
+    display: flex; /* Exibe os links como flex */
+    align-items: center; /* Alinha os itens verticalmente */
+    padding: 8px 14px; /* Padding interno nos links */
+    transition: all 0.7s; /* Suaviza a transição do link */
+  }
+
+  /* Efeito de hover nos links */
+  a:hover {
+    font-weight: bold; /* Deixa o texto em negrito */
+    transform: scale(
+      1.09
+    ); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+  }
+}
+
+/* Responsividade para telas maiores que 640px */
+@media (min-width: 640px) {
+  .contentLogo {
+    display: flex; /* Exibe o logo em telas maiores */
+  }
+}

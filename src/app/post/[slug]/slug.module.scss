@@ -1,0 +1,74 @@
+/* Estiliza a seção "about", que contém informações sobre o item */
+.about {
+  display: flex; /* Usa flexbox para organizar os elementos */
+  margin: 44px 14px; /* Define margens externas para espaçamento */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  gap: 44px; /* Adiciona um espaçamento entre os elementos */
+}
+
+/* Estiliza o título principal dentro da seção "about" */
+.title {
+  font-size: 28px; /* Define o tamanho da fonte */
+  margin-bottom: 14px; /* Adiciona espaçamento abaixo do título */
+}
+
+/* Define o layout interno da seção "about" */
+.innerAbout {
+  flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
+
+  /* Estiliza os parágrafos dentro da seção "innerAbout" */
+  p {
+    margin-bottom: 24px; /* Adiciona espaçamento abaixo dos parágrafos */
+  }
+}
+
+/* Estiliza o botão/link dentro da seção "about" */
+.link {
+  background-color: #121212; /* Define a cor de fundo do botão */
+  color: #fff; /* Define a cor do texto como branco */
+  border-radius: 4px; /* Arredonda levemente os cantos do botão */
+  padding: 8px 24px; /* Define espaçamento interno para o botão */
+  display: inline-flex; /* Usa flexbox para organizar os elementos */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  gap: 10px; /* Adiciona um espaçamento entre os elementos */
+}
+
+/* Define o contêiner da imagem no "about" */
+.bannerAbout {
+  position: relative; /* Permite posicionamento absoluto dos elementos filhos */
+  width: 300px; /* Define a largura padrão */
+  max-width: 400px; /* Define a largura máxima */
+  height: 350px; /* Define a altura fixa */
+}
+
+/* Estiliza a imagem dentro do contêiner "bannerAbout" */
+.imageAbout {
+  object-fit: cover; /* Faz com que a imagem se ajuste sem distorcer */
+  border-radius: 8px; /* Arredonda os cantos da imagem */
+  width: 300px; /* Define a largura da imagem */
+  height: 350px; /* Define a altura da imagem */
+}
+
+/* Estiliza o rodapé da página */
+.footer {
+  display: flex; /* Usa flexbox para organizar o conteúdo */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  margin: 30px 0; /* Adiciona um espaço acima e abaixo do rodapé */
+}
+
+/* Media query para telas maiores que 640px */
+@media (min-width: 640px) {
+  /* Altera a seção "about" para organizar os elementos em linha */
+  .about {
+    flex-direction: row; /* Altera a direção para linha (horizontal) */
+    gap: 54px; /* Aumenta o espaçamento entre os elementos */
+  }
+
+  /* Faz com que o "bannerAbout" ocupe o espaço disponível */
+  .bannerAbout {
+    flex: 1;
+  }
+}

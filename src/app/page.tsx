@@ -1,95 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// Importando componentes e funções necessárias para a página inicial
+import { SubMenu } from "@/components/home/submenu"; // Componente para o menu superior
+import { Hero } from "@/components/hero/index"; // Componente Hero, geralmente usado para destacar informações principais
+import { getDataHome, subMenu } from "@/utils/actions/get-data"; // Função que busca os dados da página inicial
+import { HomeProps } from "@/utils/home.type"; // Tipagem para os dados que serão passados para os componentes
 
-export default function Home() {
+import { MenuProps } from "@/utils/menu.types"; // Tipagem para os dados que serão passados para os componentes
+import { Phone } from "lucide-react"; // Ícone de telefone proveniente da biblioteca 'lucide-react'
+import { Services } from "@/components/home/services"; // Componente para exibir os serviços oferecidos
+import { Footer } from "@/components/home/footer/index"; // Componente para o rodapé da página
+import { Container } from "@/components/container/index"; // Componente para centralizar o conteúdo na página
+
+// Função assíncrona responsável por renderizar a página principal
+export default async function Home() {
+  // Chamando a função 'getDataHome' para obter os dados necessários para a página
+  const { object }: HomeProps = await getDataHome(); // A resposta é desestruturada para pegar o 'object' com os dados
+
+  const menu: MenuProps = await subMenu();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main>
+      {/* Componente SubMenu: Exibe um menu de navegação */}
+      {menu.objects.length > 0 && <SubMenu menu={menu} />}
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* Componente Hero: Exibe uma seção com destaque para uma mensagem principal */}
+      <Hero
+        heading={object.metadata.heading} // Título do Hero
+        buttonTitle={object.metadata.cta_button.title} // Texto do botão do Hero
+        buttonUrl={object.metadata.cta_button.url} // URL do botão do Hero
+        bannerUrl={object.metadata.banner.url} // URL da imagem do banner no Hero
+        icon={<Phone size={24} color="#fff" />} // Ícone de telefone utilizado no botão, com tamanho 24 e cor branca
+      />
+
+      {/* Componente Container: Serve para centralizar os conteúdos da página */}
+      <Container>
+        {/* Componente Services: Exibe os serviços oferecidos, passando os dados obtidos */}
+        <Services object={object} />
+
+        {/* Componente Footer: Exibe o rodapé da página */}
+        <Footer object={object} />
+      </Container>
+    </main>
   );
 }

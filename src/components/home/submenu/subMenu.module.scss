@@ -1,0 +1,90 @@
+/* Estiliza o submenu, define um tamanho máximo e espaçamentos internos */
+.submenu {
+  margin: 0 auto; /* Centraliza horizontalmente */
+  max-width: 1024px; /* Define a largura máxima do submenu */
+  padding: 64px 14px 4px 14px; /* Espaçamento interno */
+}
+
+/* Estiliza o ícone do menu (hamburguer), inicialmente oculto */
+.submenuIcon {
+  display: none; /* Esconde o ícone em telas maiores */
+  gap: 14px; /* Espaçamento entre o ícone e o texto */
+  align-items: center; /* Alinha os itens no centro verticalmente */
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  cursor: pointer; /* Transforma o cursor em ponteiro ao passar */
+}
+
+/* Estiliza a lista de navegação do submenu */
+.ul {
+  display: none; /* Inicialmente oculta */
+  list-style: none; /* Remove os estilos padrão da lista */
+  padding: 14px 0; /* Espaçamento interno superior e inferior */
+  row-gap: 24px; /* Espaçamento entre os itens da lista */
+  column-gap: 14px; /* Espaçamento entre colunas */
+
+  /* Estiliza os links dentro da lista */
+  li a {
+    background-color: #121212; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    padding: 8px 14px; /* Espaçamento interno */
+    border-radius: 4px; /* Borda arredondada */
+  }
+}
+
+/* Estiliza o botão de fechar o menu */
+.closeButton {
+  background: transparent; /* Remove fundo padrão */
+}
+
+/* Quando a tela for maior que 768px, a lista de navegação será visível */
+@media (min-width: 768px) {
+  .ul {
+    display: flex;
+  }
+}
+
+/* Quando a tela for menor ou igual a 768px */
+@media (max-width: 768px) {
+  /* Exibe o ícone do menu (hamburguer) */
+  .submenuIcon {
+    display: inline-flex;
+  }
+
+  /* Estiliza o menu aberto em telas menores */
+  .ul {
+    z-index: 99; /* Coloca o menu acima dos outros elementos */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens */
+    justify-content: center; /* Centraliza verticalmente */
+    position: fixed; /* Fixa o menu na tela */
+    left: 50%; /* Centraliza horizontalmente */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translate(-50%, -50%); /* Ajusta o posicionamento */
+    background-color: #fff; /* Fundo branco */
+    width: 100%; /* Ocupa toda a largura */
+    height: 100%; /* Ocupa toda a altura */
+
+    /* Quando a classe "open" estiver presente, o menu será exibido */
+    &.open {
+      display: flex;
+    }
+  }
+
+  /* Estiliza os links dentro da lista quando o menu está aberto */
+  .ul li {
+    a {
+      background-color: transparent; /* Remove o fundo padrão */
+      color: #121212; /* Cor preta para o texto */
+      font-size: 20px; /* Aumenta o tamanho da fonte */
+      font-weight: bold; /* Negrito */
+      transition: all 0.6s; /* Suaviza as transições */
+    }
+
+    /* Efeito ao passar o mouse nos links */
+    a:hover {
+      background-color: #121212; /* Fundo preto */
+      color: #fff; /* Texto branco */
+    }
+  }
+}

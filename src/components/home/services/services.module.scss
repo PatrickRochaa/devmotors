@@ -1,0 +1,156 @@
+/* Estilização da seção "Sobre" */
+.containerAbout {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Exibe os elementos um abaixo do outro */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: space-between; /* Distribui o espaço entre os elementos */
+  gap: 24px; /* Espaçamento entre os elementos */
+  margin: 34px 0; /* Margem superior e inferior */
+  padding-top: 54px; /* Espaço superior para separação */
+}
+
+/* Estilização do conteúdo interno da seção "Sobre" */
+.innerAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Exibe os elementos um abaixo do outro */
+  gap: 14px; /* Espaçamento entre os elementos */
+  width: 100%;
+
+  /* Estilização do parágrafo dentro da seção */
+  p {
+    line-height: 150%; /* Espaçamento entre linhas para melhor legibilidade */
+    text-align: justify; /* Alinha o texto de forma justificada */
+  }
+}
+
+/* Estilização do título dentro da seção "Sobre" */
+.containerAbout {
+  .title {
+    align-self: flex-start; /* Alinha o título à esquerda */
+    font-size: 34px; /* Tamanho da fonte */
+    color: #121212; /* Cor do texto */
+  }
+}
+
+/* Estilização do container da imagem na seção "Sobre" */
+.bannerAbout {
+  position: relative; /* Permite posicionamento relativo para ajustes */
+  width: 300px; /* Largura fixa */
+  height: 350px; /* Altura fixa */
+}
+
+/* Estilização da imagem dentro do container */
+.imageAbout {
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorção */
+  width: 300px; /* Largura fixa */
+  height: 350px; /* Altura fixa */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Responsividade: Ajustes para telas maiores que 640px */
+@media (min-width: 640px) {
+  .containerAbout {
+    flex-direction: row; /* Altera para um layout em linha */
+    gap: 34px; /* Ajusta o espaçamento */
+
+    .title {
+      align-self: flex-start; /* Mantém o título alinhado à esquerda */
+    }
+  }
+}
+
+/* Responsividade: Ajustes para telas maiores que 768px */
+@media (min-width: 768px) {
+  .innerAbout {
+    /* Ajuste de largura do parágrafo */
+    p {
+      max-width: 80%; /* Define um limite de largura para melhor legibilidade */
+      align-self: flex-start; /* Alinha o texto à esquerda */
+    }
+  }
+
+  /* Ajuste no tamanho do banner */
+  .bannerAbout {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+/* Estilização da aba de serviços */
+.servicesTitle {
+  text-transform: uppercase; /* Converte o texto para letras maiúsculas */
+  color: #121212; /* Define a cor do texto */
+  margin: 40px 0 24px 0; /* Margem superior e inferior */
+  text-align: center; /* Centraliza o título */
+  font-size: 24px; /* Tamanho da fonte */
+}
+
+/* Container principal dos serviços */
+.services {
+  display: flex;
+  gap: 24px; /* Espaçamento entre os serviços */
+  flex-direction: column; /* Exibe os serviços em coluna */
+}
+
+/* Estilização do texto dentro de cada serviço */
+.service p {
+  text-align: center; /* Centraliza o texto */
+  margin: 8px 0; /* Margem superior e inferior */
+  font-size: 18px; /* Define o tamanho da fonte */
+  transition: all 0.4s; /* Adiciona uma transição suave nas mudanças */
+}
+
+/* Container da imagem do serviço */
+.innerService {
+  position: relative; /* Posição relativa para ajustes */
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 200px; /* Define a altura */
+  overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estilização da imagem dentro do serviço */
+.imageService {
+  object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
+  border-radius: 8px; /* Bordas arredondadas */
+  width: 280px; /* Largura fixa */
+  height: 350px; /* Altura fixa */
+  transition: all 0.4s; /* Adiciona uma transição suave */
+}
+
+/* Efeito de zoom ao passar o mouse sobre a imagem do serviço */
+.innerService:hover {
+  .imageService {
+    transform: scale(1.2); /* Aumenta o tamanho da imagem */
+  }
+
+  /* Deixa o texto em negrito quando o mouse estiver sobre a imagem */
+  + p {
+    font-weight: bold;
+  }
+}
+
+/* Responsividade da aba de serviços para telas maiores que 640px */
+@media (min-width: 640px) {
+  .services {
+    flex-direction: row; /* Exibe os serviços em linha */
+    flex-wrap: wrap; /* Permite que os serviços quebrem para a linha de baixo */
+    align-items: center; /* Centraliza os serviços verticalmente */
+    justify-content: center; /* Centraliza os serviços horizontalmente */
+  }
+
+  /* Ajuste do tamanho do container de imagem */
+  .innerService {
+    width: 230px;
+    height: 200px;
+  }
+
+  /* Ajuste no tamanho do título */
+  .servicesTitle {
+    margin-top: 54px; /* Adiciona mais espaço acima do título */
+    font-size: 30px; /* Aumenta o tamanho da fonte */
+  }
+}

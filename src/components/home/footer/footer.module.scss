@@ -1,0 +1,75 @@
+/* Estilização do rodapé */
+.footer {
+  display: flex; /* Usa flexbox para organizar os elementos */
+  flex-direction: column; /* Os itens ficam empilhados verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  margin: 84px 0 14px 0; /* Margem superior grande, inferior menor */
+}
+
+/* Seção principal do rodapé */
+.section {
+  width: 90%; /* Define a largura como 90% da tela */
+  background-color: #000; /* Cor de fundo preta */
+  padding: 30px 14px; /* Espaçamento interno */
+  border-radius: 14px; /* Bordas arredondadas */
+  z-index: 20; /* Eleva o elemento acima de outros */
+}
+
+/* Título da seção */
+.title {
+  text-align: center; /* Centraliza o texto */
+  color: #fff; /* Cor do texto branca */
+  font-size: 30px; /* Define o tamanho da fonte */
+  margin-bottom: 24px; /* Adiciona espaço abaixo do título */
+}
+
+/* Container dos itens de contato */
+.content {
+  color: #fff; /* Define a cor do texto como branca */
+  display: grid; /* Usa o Grid Layout */
+  grid-template-columns: 1fr; /* Define uma única coluna */
+  gap: 14px; /* Espaçamento entre os itens */
+  padding: 14px 30px; /* Espaçamento interno */
+  align-items: center; /* Centraliza os itens na vertical */
+  justify-content: center; /* Centraliza os itens na horizontal */
+}
+
+/* Estilização dos itens individuais de contato */
+.item {
+  display: flex; /* Usa flexbox */
+  gap: 14px; /* Espaçamento entre os elementos internos */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilização do botão/link de chamada para ação */
+.link {
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 14px; /* Espaçamento entre ícone e texto */
+  background-color: #30b700; /* Cor de fundo verde */
+  color: #fff; /* Cor do texto branca */
+  padding: 8px 24px; /* Espaçamento interno */
+  margin-top: 24px; /* Margem superior para separação */
+  font-weight: medium; /* Define um peso médio para a fonte */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estilização do texto de direitos autorais */
+.copyText {
+  margin-top: 64px; /* Espaço extra acima do texto */
+}
+
+/* Responsividade: Ajusta a disposição do conteúdo em telas maiores */
+@media (min-width: 640px) {
+  .content {
+    grid-template-columns: 1fr 1fr; /* Em telas maiores, cria duas colunas */
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    width: 70%; /* Em telas maiores, reduz a largura da seção para 70% */
+  }
+}

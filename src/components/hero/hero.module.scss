@@ -1,0 +1,73 @@
+/* Container principal do Hero */
+.main {
+  width: 100%; /* O Hero ocupa toda a largura da tela */
+  position: relative; /* Necessário para o posicionamento absoluto dos filhos */
+  display: flex; /* Utiliza flexbox para alinhar os elementos internamente */
+  flex-direction: column; /* Alinha os itens na vertical */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+/* Container interno que contém o título e o botão */
+.containerHero {
+  position: absolute; /* Posiciona o conteúdo dentro do Hero de forma absoluta */
+  display: flex; /* Utiliza flexbox para organizar os itens verticalmente */
+  flex-direction: column; /* Alinha os itens de forma coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Alinha os itens verticalmente */
+  z-index: 10; /* Garante que este conteúdo fique acima da imagem de fundo */
+}
+
+/* Estilos para o título do Hero */
+.title {
+  font-size: 30px; /* Define o tamanho da fonte */
+  color: #fff; /* Cor do texto, branco */
+  margin-bottom: 14px; /* Espaçamento inferior para separar o título do botão */
+  text-align: center; /* Alinha o texto ao centro */
+  font-weight: bold; /* Deixa o texto em negrito */
+  padding: 2px;
+}
+
+/* Estilos para o link (botão) */
+.link {
+  display: flex; /* Utiliza flexbox para alinhar o conteúdo do botão */
+  align-items: center; /* Alinha o ícone e o texto do botão verticalmente */
+  justify-content: center; /* Alinha os itens dentro do botão horizontalmente */
+  gap: 14px; /* Espaço entre o ícone e o texto */
+  margin-top: 14px; /* Espaçamento superior para separar o botão do título */
+  background-color: #30b700; /* Cor de fundo do botão */
+  border-radius: 8px; /* Arredonda as bordas do botão */
+  padding: 8px 24px; /* Espaçamento interno do botão */
+  color: #fff; /* Cor do texto do botão */
+  transition: all 0.5s; /* Suaviza a transição para o efeito de hover */
+}
+
+/* Efeito de hover para o botão */
+.link:hover {
+  transform: scale(1.09); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* Container da imagem de fundo */
+.contentBanner {
+  position: relative; /* Permite posicionar a imagem de fundo de forma controlada */
+  width: 100%; /* A imagem ocupa toda a largura da tela */
+  height: 400px; /* Altura fixa para a imagem de fundo */
+  background-color: #000; /* Cor de fundo caso a imagem não carregue */
+}
+
+/* Estilos da imagem de fundo */
+.banner {
+  width: 100%; /* A imagem ocupa toda a largura do container */
+  object-fit: cover; /* A imagem cobre toda a área sem distorção */
+  position: relative; /* Permite controle sobre a posição da imagem */
+  opacity: 0.3; /* Torna a imagem semi-transparente */
+  background: fixed; /* A imagem fica fixa durante o rolar da página */
+}
+
+/* Estilos responsivos para telas com largura mínima de 640px */
+@media (min-width: 640px) {
+  .title {
+    font-size: 40px; /* Aumenta o tamanho do título em telas maiores */
+    max-width: 600px; /* Limita a largura máxima do título */
+  }
+}
